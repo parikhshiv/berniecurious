@@ -4,7 +4,7 @@
   "description": "Info for those curious about Bernie Sanders and Democratic Socialism",
   "main": "application.js",
   "devDependencies": {
-    "angular": "^1.4.8"
+    "bootstrap": "^3.3.6"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
