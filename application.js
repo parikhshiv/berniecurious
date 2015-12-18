@@ -5,16 +5,16 @@
   }
 
   Video.prototype.create = function () {
-    addYoutube.call(this);
+    this.addYoutube('SsDSbgEZswY');
     addLinks.call(this);
     return this.element;
   }
 
-  var addYoutube = function () {
+  Video.prototype.addYoutube = function (topic) {
     var youtube = document.createElement("embed")
-    youtube.setAttribute("src", "https://www.youtube.com/v/SsDSbgEZswY");
-    youtube.setAttribute("width", 420);
-    youtube.setAttribute("height", 315);
+    youtube.setAttribute("src", "https://www.youtube.com/v/" + topic);
+    youtube.setAttribute("width", window.innerWidth / 2.5);
+    // youtube.setAttribute("height", 315);
 
     this.element.appendChild(youtube);
   }
@@ -28,9 +28,9 @@
     var leftLink = document.createElement("a");
     var rightLink = document.createElement("a");
     leftLink.setAttribute("href", "http://berniesanders.com");
-    rightLink.setAttribute("href", "http://google.com");
+    rightLink.setAttribute("href", "https://www.google.com/search?q=bernie+sanders&biw=1919&bih=935&noj=1&source=lnms&tbm=nws&sa=X&ved=0ahUKEwjViNiRuebJAhULqh4KHYYvC_0Q_AUICCgB");
     leftLink.textContent = "BernieSanders.com";
-    rightLink.textContent = "Google";
+    rightLink.textContent = "Media";
 
     floatLeft.appendChild(leftLink);
     floatRight.appendChild(rightLink);
@@ -80,8 +80,8 @@
   var Footer = window.Footer = function () {
     this.element = document.createElement("div");
     this.element.classList.add("footer", "container-fluid");
-    this.videos = [["Wealth Inequality", 'one'], ["Democratic Socialism", 'two'],
-    ["Bernie's Solution", 'three'], ["Contribute", 'four']];
+    this.videos = [["Wealth Inequality", 'Ui-fHDUnZDg'], ["Democratic Socialism", '6V1uBXMfTHY'],
+    ["Bernie's Solution", 'awXB5Ulaehk'], ["Poverty", 'wk0-eKo5rIk']];
   }
 
   Footer.prototype.create = function () {
@@ -111,8 +111,12 @@
   }
 
   var createPage = function (topic) {
+    var video = document.getElementsByClassName('video')[0]
     var youtube = document.getElementsByTagName('embed')[0];
-    youtube.setAttribute("src", "https://www.youtube.com/v/" + topic);
+    video.removeChild(youtube);
+    obj = {'element': video };
+
+    new window.Video().addYoutube.call(obj, topic);
   };
 
   var addLinks = function () {
@@ -120,6 +124,9 @@
       var label = this.videos[i][0].split(" ")[0];
       this[label].addEventListener('click', createPage.bind(null, this.videos[i][1]));
     }
+
+    var header = document.getElementsByTagName('h1')[0];
+    header.addEventListener('click', createPage.bind(null, 'SsDSbgEZswY'));
   };
 }());
 

@@ -78,6 +78,7 @@ div.video {
   text-align: center;
   border-style: ridge;
   padding: 3rem 0;
+  height: 74%;
 }
 
 div.row {
@@ -100,7 +101,7 @@ div.footer-section {
 div.footer-section:hover {
   cursor: pointer;
   color: #F55B5B;
-  text-shadow: 0.5px 0.5px 0.5px #F55B5B;
+  text-shadow: 0.5px 0.5px 0.5px #147FD7;
 }
 
 div.footer-section:first-child {
@@ -121,4 +122,13 @@ div.links {
   width: 28%;
   font-size: 2em;
   text-align: center;
+}
+
+embed {
+  height: 100%;
+}
+
+h1:hover {
+  cursor: pointer;
+  text-shadow: 0.5px 0.5px 0.5px #F55B5B;
 }
