@@ -2,7 +2,7 @@
   "name": "berniecurious",
   "version": "1.0.0",
   "description": "Info for those curious about Bernie Sanders and Democratic Socialism",
-  "main": "application.js",
+  "main": "index.html",
   "devDependencies": {
     "bootstrap": "^3.3.6"
   },
