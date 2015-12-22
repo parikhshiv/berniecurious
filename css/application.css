@@ -1,0 +1,199 @@
+@font-face {
+  font-family: 'freightsans';
+  src: url('../fonts/freightsans_bold-webfont.eot');
+  src: url('../fonts/freightsans_bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/freightsans_bold-webfont.woff2') format('woff2'),
+    url('../fonts/freightsans_bold-webfont.woff') format('woff'),
+    url('../fonts/freightsans_bold-webfont.ttf') format('truetype'),
+    url('../fonts/freightsans_bold-webfont.svg#freightsans_boldregular') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'freightsans';
+  src: url('../fonts/freightsans_medium-webfont.eot');
+  src: url('../fonts/freightsans_medium-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/freightsans_medium-webfont.woff2') format('woff2'),
+    url('../fonts/freightsans_medium-webfont.woff') format('woff'),
+    url('../fonts/freightsans_medium-webfont.ttf') format('truetype'),
+    url('../fonts/freightsans_medium-webfont.svg#freightsans_mediumregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'jubilat';
+  src: url('../fonts/jubilatmedium-roman-webfont.eot');
+  src: url('../fonts/jubilatmedium-roman-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/jubilatmedium-roman-webfont.woff2') format('woff2'),
+    url('../fonts/jubilatmedium-roman-webfont.woff') format('woff'),
+    url('../fonts/jubilatmedium-roman-webfont.ttf') format('truetype'),
+    url('../fonts/jubilatmedium-roman-webfont.svg#jubilat_mediumregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  orange: #EA504E;
+  lightorange: #F55B5B;
+  blue: #147FD7;
+  lightblue: #8ABFEB;
+  lightgray: #F1F1F1;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: freightsans;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+#container {
+  height: 100%;
+}
+
+h1 {
+  text-transform: uppercase;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  text-shadow: 0.5px 0.5px 0.5px #8ABFEB;
+  font-size: 3.2em;
+  color: #147FD7;
+  letter-spacing: 0.8rem;
+}
+
+h1.modal-header {
+  color: white;
+  width: 60%;
+}
+
+.modal-backdrop.in {
+  opacity: 0.85;
+}
+
+.navbar {
+  width: 60%;
+  margin: 2rem auto 0;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #147FD7;
+}
+
+div.video {
+  margin: 2rem auto;
+  margin-bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 3rem 0;
+  height: 74%;
+}
+
+div.row {
+  height: 100%;
+}
+
+div.footer-section {
+  font-family: freightsans;
+  font-size: 2em;
+  height: 100%;
+  line-height: 300%;
+  text-align: center;
+  width: 46%;
+  margin: 1% 1%;
+  border-radius: 2%;
+  color: white;
+  background-color: #EA504E;
+  -webkit-transition: 0.5s; /* Safari */
+  transition: 0.5s;
+}
+
+div.footer-section:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 2px black;
+  transform: scale3d(1.0, 1.05, 0.9);
+  -webkit-transition: 0.5s; /* Safari */
+  transition: 0.5s;
+}
+
+div.left {
+  float: left;
+}
+
+div.right {
+  float: right;
+}
+
+div.links {
+  margin: auto;
+  height: 5em;
+  width: 28%;
+  font-size: 2em;
+  text-align: center;
+}
+
+iframe {
+  height: 100%;
+  padding: 2rem;
+  border: none;
+}
+
+h3.sub-head {
+  font-family: freightsans;
+  font-size: 2.5em;
+  letter-spacing: 0.1rem;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  padding: 3rem;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+}
+
+div.row {
+  height: 100px;
+  margin: 10px;
+}
+
+@media screen and (max-width: 991px) {
+
+  body {
+    background-color: black;
+  }
+
+  div.footer-section {
+    font-family: freightsans;
+    font-size: 3rem;
+    height: inherit;
+    line-height: 500%;
+    text-align: center;
+    margin: 2% auto;
+    width: 50%;
+    border-radius: 2%;
+    color: white;
+    background-color: #EA504E;
+  }
+
+  div.footer-section:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 2px white;
+  }
+
+  div.footer-section:last-child {
+    margin-bottom: -1%;
+  }
+
+  div.row {
+    height: inherit;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+  div.footer-section {
+    font-size: 1rem;
+  }
+}

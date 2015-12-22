@@ -14,9 +14,10 @@
   }
 
   Video.prototype.addYoutube = function () {
-    var youtube = document.createElement("embed")
+    var youtube = document.createElement("iframe")
     youtube.setAttribute("src", "https://www.youtube.com/v/" + this.topic);
-    youtube.setAttribute("width", window.innerWidth / 2.5);
+    youtube.setAttribute("width", window.innerWidth / 2);
+    youtube.setAttribute("frameborder", "0");
 
     this.element.appendChild(youtube);
   }
@@ -69,14 +70,20 @@
   var Footer = window.Footer = function () {
     this.element = document.createElement("div");
     this.element.classList.add("footer", "container-fluid");
-    this.videos = [["Wealth Inequality", 'Ui-fHDUnZDg'], ["Democratic Socialism", 'SsDSbgEZswY'],
-    ["The Solution", 'awXB5Ulaehk'], ["Poverty", 'wk0-eKo5rIk']];
+    this.videos = [["Wealth Inequality", 'Ui-fHDUnZDg'],
+      ["Democratic Socialism", 'SsDSbgEZswY'],
+      ["Poverty", 'wk0-eKo5rIk'], ["Economic Freedom", "LCnrQZbqIQU"],
+      ["Foreign Policy", "eQcmzGIKrzg"], ["The Solution", 'awXB5Ulaehk'] ];
   }
 
   Footer.prototype.create = function () {
     addSubHeader.call(this, "See What He Has To Say About:");
     addSections.call(this, {"videos": this.videos});
     addLinks.call(this);
+
+    $(".modal").each(function(index, modal){
+      $(modal).on('hidden.bs.modal',stopVideo);
+    });
     return this.element;
   }
 
@@ -93,6 +100,7 @@
       var label = opts.videos[i][0].split(" ")[0];
       this[label] = document.createElement("div");
       this[label].classList.add("col-md-6", "footer-section");
+
       this[label].setAttribute("id", label);
 
       $(this[label]).text(opts.videos[i][0])
@@ -108,6 +116,14 @@
 
   var toggleModal = function (topic) {
     $("#" + topic).modal('toggle');
+  };
+
+  var stopVideo = function  (event) {
+    var $iframe = $(event.currentTarget);
+    var $parent = $iframe.parent();
+
+    $parent.remove("iframe");
+    $parent.append($iframe);
   };
 
   var addLinks = function () {
